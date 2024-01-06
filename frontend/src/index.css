@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap');
+
+.textGradient{
+  background: linear-gradient(to right, #56e356  , #028e02);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.bgGradient{
+  background: linear-gradient(to right, #56e356 , #028e02);
+}
+
+body{
+  font-style: 'Inter';
+  background-color: #222629;
+}
