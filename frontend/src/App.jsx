@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Home from './pages/home'
-import Login from './components/Log in and sign in/Login'
-import Signin from './components/Log in and sign in/Signin'
-import Tab from './components/Log in and sign in/Tab'
+import Login from './pages/Log-in-and-sign-up/Login'
+import Signup from './pages/Log-in-and-sign-up/Signup'
+import Tab from './pages/Log-in-and-sign-up/Tab'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
       {/* <Home /> */}
       <div className="flex-col justify-center py-4">
         <Tab selected={selected} onSelect={handleSelect} />
-        {selected === 'Sign In' ? <Signin /> : <Login />}
+        {selected === 'Sign In' ? <Signup /> : <Login />}
       </div>
     </>
   )

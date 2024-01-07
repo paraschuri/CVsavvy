@@ -6,7 +6,7 @@ import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { GithubLoginButton } from "react-social-login-buttons";
 
-const Signin = () => {
+const SignUp = () => {
   return (
     <div className="min-h-max w-96 flex items-center justify-center m-auto py-12 px-4 sm:px-6 lg:px-8
      border-lightGreen border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-2xl shadow-darkGreen">
@@ -59,7 +59,7 @@ const Signin = () => {
 
           <div>
             <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-3xl text-white bgGradient  focus:outline-none focus:ring-2 focus:ring-offset-black focus:ring-green-600">
-              SIGN IN 
+              SIGN UP 
             </button>
           </div>
           
@@ -80,5 +80,5 @@ const Signin = () => {
   );
 }
 
-export default Signin;
+export default SignUp;
     
