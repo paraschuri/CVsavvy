@@ -8,11 +8,11 @@ import { GithubLoginButton } from "react-social-login-buttons";
 
 const SignUp = () => {
   return (
-    <div className="min-h-max w-96 flex items-center justify-center m-auto py-12 px-4 sm:px-6 lg:px-8
-     border-lightGreen border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-2xl shadow-darkGreen">
+    <div className="min-h-max w-96 flex items-center justify-center m-auto py-4 px-4 sm:px-6 lg:px-8
+     border-green-500 border-2 rounded-md rounded-t-none shadow-md shadow-lightGreen shadow-t-none">
       <div className="max-w-md w-full space-y-8 ">
         <div>
-          <h4 className="mt-auto text-center text-balance font-extrabold text-white text-xs">
+          <h4 className="mt-auto mb-2 text-center text-balance font-extrabold text-white text-xs">
             Dont have an account, <span className='text-darkGreen cursor-pointer hover:text-lightGreen' >Sign Up</span> 
           </h4>
         </div>
@@ -20,7 +20,7 @@ const SignUp = () => {
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email-address" className="text-white flex py-2">Name</label>
+              <label htmlFor="name" className="text-white flex py-2">Name</label>
               <div className='flex items-center'>
                 <CircleUser className='bg-white rounded-r-none rounded-l-3xl h-9 w-8 pl-2 pr-2'/>
                 <input id="name" name="name" type="text" autoComplete="text"  required className="rounded-3xl rounded-l-none relative w-full h-auto px-3 py-2 border border-darkBlack placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-lightGreen focus:border-darkGreen focus:z-10 focus:-outline-offset-8 sm:text-sm" placeholder="Name" />

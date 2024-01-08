@@ -17,11 +17,11 @@ const LoginPage = () => {
   },[location])
   return (
     <>
-    <div className="flex justify-center items-center mt-44">
+    <div className="flex justify-center items-center mt-32 mb-0 py-0">
       <Link to="/signup"
-        className={`w-48 py-2 px-4 rounded-bl-none rounded-tl-lg ${
+        className={`w-48 py-2 rounded-bl-none rounded-tl-lg flex justify-center ${
           selected === '/signup'
-            ? 'bg-lightGreen text-white border-darkGreen shadow-2xl shadow-darkGreen'
+            ? 'bg-green-500 text-black font-bold border-darkGreen shadow-lg shadow-darkGreen'
             : 'bg-black text-gray-300 border-lightBlack hover:bg-lightBlack'
         }`}
         onClick={() => handleSelect('/signup')}
@@ -29,9 +29,9 @@ const LoginPage = () => {
         SIGN UP
       </Link>
       <Link to = "/login"
-        className={`w-48 py-2 px-4 rounded-br-none rounded-tr-lg ${
+        className={`w-48 py-2 rounded-br-none rounded-tr-lg flex justify-center ${
           selected === '/login'
-          ? 'bg-lightGreen text-white border-darkGreen shadow-2xl shadow-darkGreen'
+          ? 'bg-green-500 text-black font-bold border-darkGreen shadow-lg shadow-darkGreen'
           : 'bg-black text-gray-300 border-lightBlack hover:bg-lightBlack'
         }`}
         onClick={() => handleSelect('/login')}
@@ -39,7 +39,7 @@ const LoginPage = () => {
         LOG IN
       </Link>
     </div>
-    <div className="flex-col justify-center py-4">
+    <div className="flex-row justify-center items-center">
       {selected === '/signup' ? <Signup /> : <Login />}
     </div>
   </>

@@ -7,11 +7,11 @@ import { GithubLoginButton } from "react-social-login-buttons";
 
 const Login = () => {
   return (
-    <div className="min-h-max w-96 flex items-center justify-center m-auto py-12 px-4 sm:px-6 lg:px-8
-     border-lightGreen border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-2xl shadow-darkGreen">
+    <div className="min-h-max w-96 flex items-center justify-center my-0 mx-auto py-4 px-2 sm:px-6 lg:px-8
+     border-green-500 border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-md shadow-green-400">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h4 className="mt-auto text-center text-balance font-extrabold text-white text-xs">
+          <h4 className="mt-auto text-center text-balance font-extrabold text-white text-xs">   
             Dont have an account, <span className='text-darkGreen cursor-pointer hover:text-lightGreen' >Sign Up</span> 
           </h4>
         </div>
@@ -60,7 +60,7 @@ const Login = () => {
             </div>
             <hr className='w-80 h-1 my-4 bg-gray-200 border-0 rounded dark:bg-white'/>
             <div className='flex-col items-center justify-center'>
-              <GoogleLoginButton size='40px' iconSize='20px'/>
+              <GoogleLoginButton size='40px' iconSize='20px' />
               <FacebookLoginButton size='40px' iconSize='20px'/>
               <GithubLoginButton size='40px' iconSize='20px'/>
             </div>

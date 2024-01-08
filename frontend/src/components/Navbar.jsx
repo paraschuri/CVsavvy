@@ -23,12 +23,12 @@ const Navbar = () => {
                     <li className="'md:ml-8 text-lg md:my-0 my-6">
                         <Link to="/" className="text-white hover:text-lightGreen">COMPANIES</Link>
                     </li>
-                    <Link to="/signup" className="md:hidden bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 mr-4 rounded-3xl text-xs text-white border-2 border-white font-semibold">SIGN UP</Link>
-                    <Link to="/login" className="md:hidden bg-gradient-to-r from-lightGreen to-darkGreen py-2 my-1 px-6 text-xs rounded-3xl font-semibold">LOG IN</Link>
+                        <Link to="/login" className="md:hidden bg-gradient-to-r from-lightGreen to-darkGreen py-2 my-1 px-6 text-xs rounded-3xl font-semibold">LOG IN</Link>
+                        <Link to="/signup" className="md:hidden bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 mr-4 rounded-3xl text-xs text-white border-2 border-white font-semibold">SIGN UP</Link>
                 </ul>
-                <div className="hidden md:flex">
-                    <Link to="/signup" className="bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 mr-4 rounded-3xl text-xs text-white border-2 border-white font-semibold">SIGN UP</Link>
+                <div className="hidden md:flex"> 
                     <Link to="/login" className="bg-gradient-to-r from-lightGreen to-darkGreen py-2 my-1 px-6 text-xs rounded-3xl font-semibold hover:bg-gradient-to-r">LOG IN</Link>
+                    <Link to="/signup" className="bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 ml-6 rounded-3xl text-xs text-white border-2 border-white font-semibold">SIGN UP</Link>
                 </div>
                 <button onClick={() => setIsOpen(!isOpen)} className="text-4xl absolute right-8 top-3 cursor-pointer md:hidden">
                     {isOpen?<IoClose />:<IoMdMenu />}
