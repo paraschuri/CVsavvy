@@ -26,7 +26,7 @@ const LoginPage = () => {
         }`}
         onClick={() => handleSelect('/signup')}
       >
-        SIGN IN
+        SIGN UP
       </Link>
       <Link to = "/login"
         className={`w-48 py-2 px-4 rounded-br-none rounded-tr-lg ${
