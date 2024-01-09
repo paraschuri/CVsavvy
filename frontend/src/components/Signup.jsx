@@ -2,25 +2,23 @@ import React from 'react';
 import { CircleUser } from 'lucide-react';
 import { LockKeyhole } from 'lucide-react';
 import { Mail } from 'lucide-react';
-import { FacebookLoginButton } from "react-social-login-buttons";
-import { GoogleLoginButton } from "react-social-login-buttons";
-import { GithubLoginButton } from "react-social-login-buttons";
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
-    <div className="min-h-max w-96 flex items-center justify-center m-auto py-4 px-4 sm:px-6 lg:px-8
+    <div className="min-h-max w-96 flex items-center justify-center m-auto py-4 px-6
      border-green-500 border-2 rounded-md rounded-t-none shadow-md shadow-lightGreen shadow-t-none">
-      <div className="max-w-md w-full space-y-8 ">
+      <div className="max-w-md w-full space-y-6 ">
         <div>
-          <h4 className="mt-auto mb-2 text-center text-balance font-extrabold text-white text-xs">
-            Dont have an account, <span className='text-darkGreen cursor-pointer hover:text-lightGreen' >Sign Up</span> 
+          <h4 className="mt-2 text-center text-balance font-extrabold text-white text-sm">
+            Have an account? <Link to="/login" className='text-darkGreen cursor-pointer hover:text-lightGreen' >Log in</Link> 
           </h4>
         </div>
         <form className="mt-4 space-y-6" action="#" method="POST">
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="name" className="text-white flex py-2">Name</label>
+              <label htmlFor="name" className="text-white flex pb-2">Name</label>
               <div className='flex items-center'>
                 <CircleUser className='bg-white rounded-r-none rounded-l-3xl h-9 w-8 pl-2 pr-2'/>
                 <input id="name" name="name" type="text" autoComplete="text"  required className="rounded-3xl rounded-l-none relative w-full h-auto px-3 py-2 border border-darkBlack placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-lightGreen focus:border-darkGreen focus:z-10 focus:-outline-offset-8 sm:text-sm" placeholder="Name" />
@@ -58,22 +56,11 @@ const SignUp = () => {
           </div>
 
           <div>
-            <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-3xl text-white bgGradient  focus:outline-none focus:ring-2 focus:ring-offset-black focus:ring-green-600">
+            <button type="submit" className="group relative w-full flex justify-center pt-2 pb-1 px-4 border border-transparent text-sm font-medium rounded-3xl text-white bgGradient  focus:outline-none focus:ring-2 focus:ring-offset-black focus:ring-green-600">
               SIGN UP 
             </button>
           </div>
-          
-          <div className='block relative'>
-            <div className='text-white text-xs flex items-center justify-center'>
-              Or continue with
-            </div>
-            <hr className='w-80 h-1 my-4 bg-gray-200 border-0 rounded dark:bg-white'/>
-            <div className='flex-col items-center justify-center'>
-              <GoogleLoginButton size='40px' iconSize='20px'/>
-              <FacebookLoginButton size='40px' iconSize='20px'/>
-              <GithubLoginButton size='40px' iconSize='20px'/>
-            </div>
-          </div>
+        
         </form>
       </div>
     </div>
