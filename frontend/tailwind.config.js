@@ -9,6 +9,9 @@ export default {
         'lightBlack' : '#474B4F',
         'darkBlack' : '#222629',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [],
