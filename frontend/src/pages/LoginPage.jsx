@@ -17,7 +17,7 @@ const LoginPage = () => {
   },[location])
   return (
     <>
-    <div className="flex justify-center items-center mt-36 mb-0 py-0">
+    <div className="flex justify-center items-center mt-24 mb-0 py-0">
       <Link to = "/login"
         className={`w-48 py-2 rounded-br-none rounded-tl-lg flex justify-center ${
           selected === '/login'
