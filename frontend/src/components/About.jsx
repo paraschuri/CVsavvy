@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
         <div class="py-16">
-            <div class="flex m-auto px-6 flex-col md:justify-evenly lg:flex-row">
+            <div class="flex m-auto px-6 flex-col md:justify-evenly lg:flex-row lg:px-6">
                 <div class="flex lg:flex-row justify-center lg:justify-start">
                     <img src={AIimg2} alt="img" className='hidden lg:flex h-auto w-2/3 rounded-3xl md:w-1/2 lg:mr-80 lg:w-full lg:h-full items-center lg:items-start' />
                 </div>

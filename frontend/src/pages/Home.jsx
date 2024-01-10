@@ -2,6 +2,7 @@ import img1 from "../assets/img1.png"
 import arrow from "../assets/arrow.png"
 import SingleFeature from "../components/SingleFeature";
 import About from "../components/About";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
     return (
@@ -35,13 +36,13 @@ const Home = () => {
                 </div>
                 <div className="flex lg:ml-10 lg:my-8 mb-6 lg:flex-row mt-6 flex-col items-start">
                     <div className="lg:mr-2 text-2xl font-extrabold mb-4 flex flex-row items-center lg:flex lg:flex-row">INTRODUCTION 
-                        <span className="textGradient pl-2"> CVsavvy</span>
                         <img src={arrow} alt="" className="px-4 lg:object-scale-down h-20 w-48 m-0 hidden md:block lg:block"/>  
                         <div className="lg:text-sm text-xs font-light lg:flex lg:flex-col hidden">From simple spelling mistakes to more hard-to-notice issues like passive language, there's a lot that could be wrong with your resume. <br /> The average job seeker might not notice these issues - <span className="font-bold">but employers do.</span> <br /> Our resume checker was designed by NALLE LOG and VELLE LOG to scan for all the details that hiring managers look for when reviewing a job applicant. Then it gives you immediate feedback on ways you can improve your resume.</div>
                     </div>
                     <div className="text-xs font-light lg:hidden">From simple spelling mistakes to more hard-to-notice issues like passive language, there's a lot that could be wrong with your resume. <br /> The average job seeker might not notice these issues - <span className="font-bold">but employers do.</span> <br /> Our resume checker was designed by NALLE LOG and VELLE LOG to scan for all the details that hiring managers look for when reviewing a job applicant. Then it gives you immediate feedback on ways you can improve your resume.</div>
                 </div>
                 <About />
+                <Testimonials />
             </div>
         </>
     );
