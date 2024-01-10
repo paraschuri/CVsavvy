@@ -24,7 +24,7 @@ const Home = () => {
                         <button className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Check your Resume</button>
                     </div>
                     <div className="mt-7 mr-8 flex size-12 h-full w-full items-center justify-center lg:items-end lg:justify-end">
-                        <img src={hero_img} alt="hello" className="md:w-1/2 w-2/3" />
+                        <img src={hero_img} alt="hello" className="w-1/2 lg:w-[450px] lg:h-[400px]" />
                     </div>
                 </div>
                 <div className="flex lg:ml-10 lg:my-8 mb-6 lg:flex-row mt-8 flex-col items-start ml-2">
