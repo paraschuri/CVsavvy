@@ -1,5 +1,6 @@
 
 import Navbar from './components/Navbar'
+import Footer from "./components/Footer";
 import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
@@ -24,6 +25,7 @@ function App() {
                     element={<LoginPage />}
                 />
             </Routes>
+            <Footer />
       </BrowserRouter>
     </>
   )
