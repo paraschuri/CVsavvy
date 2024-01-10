@@ -13,9 +13,12 @@ const Home = () => {
     
     return (
         <>
-            <div className="text-white max-w-[1300px] px-10 mx-auto w-screen">
-                <div className="flex flex-col-reverse items-center lg:flex-row lg:gap-8">
-                    <div className="lg:mt-16 lg:w-[67%] lg:ml-10 lg:block flex flex-col items-center justify-center mt-4">
+            <div className="text-white max-w-[1300px] px-10 pr-16 mx-auto w-screen">
+                <div className="flex flex-col lg:flex-row gap-4">
+                    <div className="mt-7 flex justify-center lg:hidden">
+                        <img src={hero_img} alt="hello" className="h-[300px] w-[350px]" />
+                    </div>
+                    <div className="lg:mt-16 lg:w-[67%] lg:ml-10 lg:block flex flex-col items-center ">
                         <h1 className="text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl font-medium ml-2 lg:ml-0">Supercharge Your Career with 
                             <span className="textGradient mt-2 pr-8 text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl font-semibold "> CVsavvy</span>
                         </h1>
@@ -23,8 +26,8 @@ const Home = () => {
                         <p className="mt-4 sm:mt-8 lg:max-w-[600px] text-xs sm:text-sm md:w-full ml-2 lg:ml-0">Our free <span className="font-semibold">AI-powered</span> resume checker scores your resume on key criteria recruiters and hiring managers look for. Get actionable steps to revamp your resume and <span className="font-semibold">land more interviews.</span></p>
                         <button className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Check your Resume</button>
                     </div>
-                    <div className="mt-7 mr-8 flex size-12 h-full w-full items-center justify-center lg:items-end lg:justify-end">
-                        <img src={hero_img} alt="hello" className="md:w-1/2 w-2/3" />
+                    <div className="mt-7 hidden lg:block">
+                        <img src={hero_img} alt="hello" className="h-[350px] w-[400px]" />
                     </div>
                 </div>
                 <div className="flex lg:ml-10 lg:my-8 mb-6 lg:flex-row mt-8 flex-col items-start ml-2">
