@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
-    <div className="min-h-max w-96 flex items-center justify-center m-auto py-4 px-6
+    <div className="min-h-max sm:w-96 flex items-center justify-center m-auto py-4 px-6 mb-4 w-[20.5rem]
      border-green-500 border-2 rounded-md rounded-t-none shadow-md shadow-lightGreen shadow-t-none">
       <div className="max-w-md w-full space-y-6 ">
         <div>
@@ -20,21 +20,21 @@ const SignUp = () => {
             <div>
               <label htmlFor="name" className="text-white flex pb-2">Name</label>
               <div className='flex items-center'>
-                <CircleUser className='bg-white rounded-r-none rounded-l-3xl h-9 w-8 pl-2 pr-2'/>
+                <CircleUser className='bg-white rounded-r-none rounded-l-3xl h-10 md:h-9 w-8 pl-2 pr-2'/>
                 <input id="name" name="name" type="text" autoComplete="text"  required className="rounded-3xl rounded-l-none relative w-full h-auto px-3 py-2 border border-darkBlack placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-lightGreen focus:border-darkGreen focus:z-10 focus:-outline-offset-8 sm:text-sm" placeholder="Name" />
               </div>
             </div>
             <div>
               <label htmlFor="email-address" className="text-white flex py-2">Email address</label>
               <div className='flex items-center'>
-                <Mail className='bg-white rounded-r-none rounded-l-3xl h-9 w-8 pl-2 pr-2'/>
+                <Mail className='bg-white rounded-r-none rounded-l-3xl h-10 md:h-9 w-8 pl-2 pr-2'/>
                 <input id="email-address" name="email" type="email" autoComplete="email"  required className="rounded-3xl rounded-l-none relative w-full h-auto px-3 py-2 border border-darkBlack placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-lightGreen focus:border-darkGreen focus:z-10 focus:-outline-offset-8 sm:text-sm" placeholder="Email address" />
               </div>
             </div>
             <div>
               <label htmlFor="password" className="text-white flex py-2">Password</label>
               <div className='flex items-center'>
-                <LockKeyhole className='bg-white rounded-r-none rounded-l-3xl h-9 w-8 pl-2 pr-2'/>
+                <LockKeyhole className='bg-white rounded-r-none rounded-l-3xl h-10 md:h-9 w-8 pl-2 pr-2'/>
                 <input id="password" name="password" type="password" autoComplete="current-password" required className="rounded-3xl rounded-l-none relative w-full h-auto px-3 py-2 border border-darkBlack placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-lightGreen focus:border-darkGreen focus:z-10 focus:-outline-offset-8 sm:text-sm" placeholder="Password" />
               </div>
             </div>

@@ -4,7 +4,7 @@ import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const Login = () => {
   return (
-    <div className="min-h-max w-96 flex items-center justify-center my-0 mx-auto py-4 px-6
+    <div className="min-h-max sm:w-96 flex items-center justify-center mt-0 mx-auto py-4 px-6 w-[20.5rem] mb-[4.7rem]
      border-green-500 border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-md shadow-green-400">
       <div className="max-w-md w-full space-y-6">
         <div>
@@ -40,7 +40,7 @@ const Login = () => {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-darkGreen hover:text-lightGreen">
+              <a href="#" className="flex justify-center items-end font-medium text-darkGreen hover:text-lightGreen">
                 Forgot your password?
               </a>
             </div>
