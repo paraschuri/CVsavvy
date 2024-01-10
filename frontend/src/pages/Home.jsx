@@ -22,17 +22,11 @@ const Home = () => {
                         <h1 className="text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl font-medium ml-2 lg:ml-0">Supercharge Your Career with 
                             <span className="textGradient mt-2 pr-8 text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl font-semibold "> CVsavvy</span>
                         </h1>
-                    
                         <p className="mt-4 sm:mt-8 lg:max-w-[600px] text-xs sm:text-sm md:w-full ml-2 lg:ml-0">Our free <span className="font-semibold">AI-powered</span> resume checker scores your resume on key criteria recruiters and hiring managers look for. Get actionable steps to revamp your resume and <span className="font-semibold">land more interviews.</span></p>
                         <button className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Check your Resume</button>
                     </div>
-<<<<<<< HEAD
                     <div className="mt-7 hidden lg:block">
                         <img src={hero_img} alt="hello" className="h-[350px] w-[400px]" />
-=======
-                    <div className="mt-7 mr-8 flex size-12 h-full w-full items-center justify-center lg:items-end lg:justify-end">
-                        <img src={hero_img} alt="hello" className="w-1/2 lg:w-[450px] lg:h-[400px]" />
->>>>>>> 1b92139684ecb626e36762a1cc47ca79beed17b0
                     </div>
                 </div>
                 <div className="flex lg:ml-10 lg:my-8 mb-6 lg:flex-row mt-8 flex-col items-start ml-2">
@@ -42,7 +36,7 @@ const Home = () => {
                     </div>
                     <div className="text-xs font-light lg:hidden">From simple spelling mistakes to more hard-to-notice issues like passive language, there's a lot that could be wrong with your resume. <br /> The average job seeker might not notice these issues - <span className="font-bold">but employers do.</span> <br /> Our resume checker was designed by NALLE LOG and VELLE LOG to scan for all the details that hiring managers look for when reviewing a job applicant. Then it gives you immediate feedback on ways you can improve your resume.</div>
                 </div>
-                <div className="flex flex-wrap justify-evenly lg:mx-8">
+                <div className="flex flex-wrap justify-evenly lg:mx-4">
                     {
                         features.map(feature=>(
                             <SingleFeature key={feature.name} name={feature.name} img={feature.img} info={feature.info} />
