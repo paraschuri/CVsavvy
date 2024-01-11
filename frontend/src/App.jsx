@@ -2,6 +2,8 @@
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
+import User from './pages/User'
+import Recruiter from './pages/Recruiter'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 function App() {
@@ -14,6 +16,14 @@ function App() {
                 <Route
                     path="/"
                     element={<Home />}
+                />
+                <Route
+                    path="/user"
+                    element={<User />}
+                />
+                <Route
+                    path="/companies"
+                    element={<Recruiter />}
                 />
                 <Route
                     path="/login"

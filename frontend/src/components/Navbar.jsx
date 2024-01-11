@@ -18,10 +18,10 @@ const Navbar = () => {
                         <Link to="/" className="text-white hover:text-lightGreen" onClick={()=>{setIsOpen(false)}}>ABOUT</Link>
                     </li>
                     <li className="'lg:ml-8 lg:my-0 my-6">
-                        <Link to="/" className="text-white hover:text-lightGreen" onClick={()=>{setIsOpen(false)}}>USER</Link>
+                        <Link to="/user" className="text-white hover:text-lightGreen" onClick={()=>{setIsOpen(false)}}>USER</Link>
                     </li>
                     <li className="'lg:ml-8 lg:my-0 my-6">
-                        <Link to="/" className="text-white hover:text-lightGreen" onClick={()=>{setIsOpen(false)}}>COMPANIES</Link>
+                        <Link to="/companies" className="text-white hover:text-lightGreen" onClick={()=>{setIsOpen(false)}}>COMPANIES</Link>
                     </li>
                     <li className="'lg:ml-8 lg:my-0 my-6">
                         <Link to="/" className="text-white hover:text-lightGreen"onClick={()=>{setIsOpen(false)}}>CONTACT US</Link>
