@@ -26,11 +26,19 @@ function App() {
                     element={<Recruiter />}
                 />
                 <Route
-                    path="/login"
+                    path="/user/login"
                     element={<LoginPage />}
                 />
                 <Route
-                    path="/signup"
+                    path="/user/signup"
+                    element={<LoginPage />}
+                />
+                <Route
+                    path="/recruiter/login"
+                    element={<LoginPage />}
+                />
+                <Route
+                    path="/recruiter/signup"
                     element={<LoginPage />}
                 />
             </Routes>

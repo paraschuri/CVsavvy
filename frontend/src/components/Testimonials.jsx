@@ -6,8 +6,8 @@ const Testimonials = () => {
 	<div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
 		<h1 className="text-4xl font-semibold leadi text-center">What our customers are saying about us</h1>
 	</div>
-	<div className="container mx-auto inline-grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2 items-center justify-center">
-		<div className="flex flex-col items-center justify-center mx-12 lg:mx-0">
+	<div className="container inline-grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2 items-center justify-center w-full">
+		<div className="flex flex-col mx-20 items-center justify-center mx-12 lg:mx-0">
 			<div className="relative text-center">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute top-0 left-0 w-8 h-8 dark:text-yellow-500">
 					<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>

@@ -35,9 +35,9 @@ const User = () => {
                     <img src={upload_img} alt="" className='h-[60px] w-[75px]'/>
                     <p className=' text-darkBlack text-center'>Drag and Drop your files here</p>
                 </div>
-                <div className='flex justify-center p-2 border-2 rounded-2xl'>
+                <button className='flex justify-center p-2 border-2 rounded-2xl'>
                     Upload files
-                </div>
+                </button>
             </div>
         </div>
         <div className='flex justify-center mt-4'>
