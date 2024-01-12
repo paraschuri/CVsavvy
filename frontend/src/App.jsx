@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
 import User from './pages/User'
 import Recruiter from './pages/Recruiter'
+import ContactUs from './pages/ContactUs'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
                 <Route
                     path="/companies"
                     element={<Recruiter />}
+                />
+                <Route
+                    path="/ContactUs"
+                    element={<ContactUs />}
                 />
                 <Route
                     path="/login"

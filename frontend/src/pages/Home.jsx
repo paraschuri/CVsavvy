@@ -76,6 +76,7 @@ const Home = () => {
                 <Testimonials />
             </div>
             <Footer />
+            
         </>
     );
 }

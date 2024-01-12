@@ -24,7 +24,7 @@ const Navbar = () => {
                         <Link to="/companies" className="text-white hover:text-lightGreen" onClick={()=>{setIsOpen(false)}}>COMPANIES</Link>
                     </li>
                     <li className="'lg:ml-8 lg:my-0 my-6">
-                        <Link to="/" className="text-white hover:text-lightGreen"onClick={()=>{setIsOpen(false)}}>CONTACT US</Link>
+                        <Link to="/ContactUs" className="text-white hover:text-lightGreen"onClick={()=>{setIsOpen(false)}}>CONTACT US</Link>
                     </li>
                     <Link to="/login" className="lg:hidden bgGradient py-2 mr-4 my-1 px-6 text-xs rounded-3xl font-semibold" onClick={()=>{setIsOpen(false)}}>LOG IN</Link>
                     <Link to="/signup" className="lg:hidden bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 rounded-3xl text-xs text-white border-2 border-white font-semibold" onClick={()=>{setIsOpen(false)}}>SIGN UP</Link>

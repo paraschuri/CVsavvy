@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
     "@lrnwebcomponents/social-media-icons": "^8.0.0",
     "@material-tailwind/react": "^2.1.8",
     "lucide-react": "^0.307.0",
