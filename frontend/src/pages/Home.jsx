@@ -8,11 +8,13 @@ import About from "../components/About";
 import Testimonials from "../components/Testimonials";
 import features from "../components/features"
 import Footer from "../components/Footer";
+import GetStarted from "./GetStarted";
 
 const Home = () => {
     
     return (
         <>
+            {/* <GetStarted /> */}
             <div className="text-white max-w-[1300px] px-10 pr-16 mx-auto w-screen">
                 <div className="flex flex-col lg:flex-row gap-4">
                     <div className="mt-7 flex justify-center lg:hidden">

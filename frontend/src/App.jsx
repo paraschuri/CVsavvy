@@ -33,7 +33,7 @@ function App() {
                     path="/signup"
                     element={<LoginPage />}
                 />
-            </Routes>
+            </Routes> 
       </BrowserRouter>
     </>
   )

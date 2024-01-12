@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="bg-lightBlack w-full flex justify-center">
+      <footer className="bg-lightBlack w-full flex justify-center relative bottom-0">
         <div className="flex items-center justify-center container max-w-[1300px] lg:px-20 py-3 px-10">
           <div className="flex justify-between flex-col md:flex-row  items-center md:items-start  md:gap-[5rem] text-left">
  

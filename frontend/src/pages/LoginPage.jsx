@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
 import {useLocation,Link} from 'react-router-dom'
+import Footer from '../components/Footer';
 
 const LoginPage = () => {
   const [selected, setSelected] = useState(null);
@@ -17,7 +18,6 @@ const LoginPage = () => {
   },[location])
   return (
     <>
-    <div className='h-[calc(100vh-75px)]'>
     <div className="flex justify-center items-center mt-24 py-0 mx-auto sm:w-auto w-[20.5rem] ">
       <Link to = "/login"
         className={`w-48 py-2 rounded-br-none rounded-tl-lg flex justify-center ${
@@ -43,7 +43,7 @@ const LoginPage = () => {
     <div className="flex-row justify-center items-center">
       {selected === '/signup' ? <Signup /> : <Login />}
     </div>
-    </div>
+    <Footer />
   </>
   );
 };

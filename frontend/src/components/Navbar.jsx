@@ -26,12 +26,12 @@ const Navbar = () => {
                     <li className="'lg:ml-8 lg:my-0 my-6">
                         <Link to="/" className="text-white hover:text-lightGreen"onClick={()=>{setIsOpen(false)}}>CONTACT US</Link>
                     </li>
-                    <Link to="/login" className="lg:hidden bgGradient py-2 mr-4 my-1 px-6 text-xs rounded-3xl font-semibold" onClick={()=>{setIsOpen(false)}}>LOG IN</Link>
-                    <Link to="/signup" className="lg:hidden bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 rounded-3xl text-xs text-white border-2 border-white font-semibold" onClick={()=>{setIsOpen(false)}}>SIGN UP</Link>
+                    <Link to="/login" className="lg:hidden bgGradient py-2 mr-4 my-1 px-6 text-xs rounded-3xl font-semibold" onClick={()=>{setIsOpen(false)}}>GET STARTED</Link>
+                    <Link to="/signup" className="lg:hidden bg-[#263238] hover:bg-[#23292c] py-2 my-1 px-6 rounded-3xl text-xs text-white border-2 border-white font-semibold" onClick={()=>{setIsOpen(false)}}>LOG IN</Link>
                 </ul>
                 <div className="hidden md:flex mt-1"> 
-                    <Link to="/login" className={`bgGradient ${isOpen?"hidden":""} py-2 my-1 px-6 text-xs rounded-3xl font-semibold`}>LOG IN</Link>
-                    <Link to="/signup" className={`bg-[#263238] ${isOpen?"hidden":""} hover:bg-[#23292c] py-2 my-1 mr-14 lg:mr-0 px-6 ml-4 rounded-3xl text-xs text-white border-2 border-white font-semibold`}>SIGN UP</Link>
+                    <Link to="/login" className={`bgGradient ${isOpen?"hidden":""} py-2 my-1 px-6 text-xs rounded-3xl font-semibold`}>GET STARTED</Link>
+                    <Link to="/signup" className={`bg-[#263238] ${isOpen?"hidden":""} hover:bg-[#23292c] py-2 my-1 mr-14 lg:mr-0 px-6 ml-4 rounded-3xl text-xs text-white border-2 border-white font-semibold`}>LOG IN</Link>
                 </div>
                 <button onClick={() => setIsOpen(!isOpen)} className="text-4xl absolute right-8 md:right-12 top-2 md:top-3 cursor-pointer lg:hidden">
                     {isOpen?<IoClose />:<IoMdMenu />}

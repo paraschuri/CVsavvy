@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
-    <div className="min-h-max sm:w-96 flex items-center justify-center m-auto py-4 px-6 mb-4 w-[20.5rem]
+    <div className="min-h-max sm:w-96 flex items-center justify-center m-auto py-4 px-6 mb-60 w-[20.5rem]
      border-green-500 border-2 rounded-md rounded-t-none shadow-md shadow-lightGreen shadow-t-none">
       <div className="max-w-md w-full space-y-6 ">
         <div>
