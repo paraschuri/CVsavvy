@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
 import {useLocation,Link} from 'react-router-dom'
+import Footer from '../components/Footer';
 
 const LoginPage = () => {
   const [selected, setSelected] = useState(null);
@@ -42,6 +43,7 @@ const LoginPage = () => {
     <div className="flex-row justify-center items-center">
       {selected === '/signup' ? <Signup /> : <Login />}
     </div>
+    <Footer />
   </>
   );
 };

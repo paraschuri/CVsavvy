@@ -41,7 +41,7 @@ function App() {
                     path="/recruiter/signup"
                     element={<LoginPage />}
                 />
-            </Routes>
+            </Routes> 
       </BrowserRouter>
     </>
   )

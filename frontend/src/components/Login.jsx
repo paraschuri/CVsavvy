@@ -12,7 +12,7 @@ const Login = () => {
     console.log(email,password)
   }
   return (
-    <div className="min-h-max sm:w-96 flex items-center justify-center mt-0 mx-auto py-4 px-6 w-[20.5rem] mb-[4.7rem]
+    <div className="min-h-max sm:w-96 flex items-center justify-center mt-0 mx-auto py-4 px-6 w-[20.5rem] mb-72
      border-green-500 border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-md shadow-green-400">
       <div className="max-w-md w-full space-y-6">
         <div>

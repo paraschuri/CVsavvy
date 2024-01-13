@@ -1,10 +1,12 @@
 import React from 'react'
 import resume from '../assets/resumes.png'
 import upload_img from '../assets/upload.png'
+import Footer from '../components/Footer'
 
 const User = () => {
   return (
-    <div className="text-white max-w-[1300px] px-10 pr-16 mx-auto w-screen">
+    <>
+        <div className="text-white max-w-[1300px] px-10 pr-16 mx-auto pb-8 w-screen">
         <div className="flex flex-col lg:flex-row gap-4">
             <div className="mt-7 flex justify-center lg:hidden">
                     <img src={resume} alt="hello" className="h-[300px] w-[350px]" />
@@ -44,6 +46,8 @@ const User = () => {
             <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black">Check Resume</button>
         </div>
     </div>
+    <Footer /> 
+    </>
   )
 }
 
