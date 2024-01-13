@@ -6,28 +6,29 @@ export const useLogin = () => {
     const [isLoading, setIsLoading] = useState(null)
     const { dispatch } = useAuthContext()
 
-    const login = async (email, password) => {
+    const login = async (email, password, isUser) => {
         setIsLoading(true)
         setError(null)
-        const response = await fetch('http://localhost:3000/api/user/login', {
+        const response = await fetch(`/api/login/${isUser?"user":"recruiter"}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         })
 
         const json = await response.json()
+        json.user = isUser
+        
         if (!response.ok) {
             setIsLoading(false)
             setError(json.error)
         }
         else {
             //saving to local storage
-            localStorage.setItem('user', JSON.stringify(json))
-
+            localStorage.setItem("data", JSON.stringify(json))
             dispatch({ type: 'LOGIN', payload: json })
 
             setIsLoading(false)
         }
     }
-    return { login, isLoading, error }
+    return { login, isLoading,setError, error }
 }

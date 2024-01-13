@@ -8,7 +8,6 @@ import About from "../components/About";
 import Testimonials from "../components/Testimonials";
 import features from "../components/features"
 import Footer from "../components/Footer";
-import GetStarted from "./GetStarted";
 
 const Home = () => {
     
@@ -78,6 +77,7 @@ const Home = () => {
                 <Testimonials />
             </div>
             <Footer />
+            
         </>
     );
 }

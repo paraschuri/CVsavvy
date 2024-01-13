@@ -6,28 +6,30 @@ export const useSignup = () => {
     const [isLoading, setIsLoading] = useState(null)
     const { dispatch } = useAuthContext()
 
-    const signup = async (email, password) => {
+    const signup = async (name, email, password, isUser) => {
         setIsLoading(true)
         setError(null)
-        const response = await fetch('http://localhost:3000/api/user/signup', {
+        const response = await fetch(`/api/signup/${isUser ? "user" : "recruiter"}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ name, email, password })
         })
 
         const json = await response.json()
+        json.user = isUser
+
         if (!response.ok) {
             setIsLoading(false)
             setError(json.error)
         }
         else {
             //saving to local storage
-            localStorage.setItem('user', JSON.stringify(json))
+            localStorage.setItem("data", JSON.stringify(json))
 
             dispatch({ type: 'LOGIN', payload: json })
 
             setIsLoading(false)
         }
     }
-    return { signup, isLoading, error }
+    return { signup, isLoading, error, setError }
 }

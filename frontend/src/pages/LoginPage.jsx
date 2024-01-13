@@ -1,27 +1,10 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react'
-import UserLogin from '../components/UserLogin'
-import UserSignup from '../components/UserSignup'
-import RecruiterLogin from '../components/RecruiterLogin'
-import RecruiterSignup from '../components/RecruiterSignup'
-import {useLocation,Link} from 'react-router-dom'
+import React from 'react';
+import Login from '../components/Login'
+import Signup from '../components/Signup'
+import {Link} from 'react-router-dom'
 import Footer from '../components/Footer';
 
 const LoginPage = ({isUser,isLogin}) => { 
-
-  // const [selected, setSelected] = useState(null);
-  
-  // const handleSelect = (tab) => {
-  //   setSelected(tab);
-  // };
-
-  // const location = useLocation();
-  // useEffect(()=>{
-  //   const path = location.pathname;
-  //   setSelected(path)
-  // },[location])
-  // const selected = (isUser?"user":"recruiter")
-
   return (
     <>
     <div className="flex justify-center items-center mt-24 py-0 mx-auto sm:w-auto w-[20.5rem] ">
@@ -48,10 +31,7 @@ const LoginPage = ({isUser,isLogin}) => {
     </div>
     <div className="flex-row justify-center items-center">
       {
-        isLogin && (isUser?<UserLogin />:<RecruiterLogin />)
-      }
-      {
-        !isLogin && (isUser?<UserSignup />:<RecruiterSignup />)
+        isLogin?<Login isUser={isUser} />:<Signup isUser={isUser} />
       }
     </div>
     <Footer />

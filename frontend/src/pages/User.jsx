@@ -1,8 +1,8 @@
 import React from 'react'
 import resume from '../assets/resumes.png'
 import upload_img from '../assets/upload.png'
-import Footer from '../components/Footer'
-
+import Table from "../components/Table";
+import Footer from "../components/Footer"
 const User = () => {
   return (
     <>
@@ -27,11 +27,6 @@ const User = () => {
         </div>
         <div className='text-3xl lg:ml-10 mt-3 mb-7'>Concerned your resume isn't good enough? Get instant feedback and suggestions using our resume scanner.</div>
         <div className='flex place-content-around' >
-            {/* <div className='border-2 h-96 w-4/12 rounded-3xl border-solid mx-10 mt-7 flex justify-center items-end shadow-md shadow-slate-500'>
-                <div className='mb-4 w-auto'>
-                    Upload files
-                </div>
-            </div> */}
             <div className='border-2 h-96 w-96 lg:w-7/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col p-4 gap-4'>
                 <div className='w-full h-full border-2 border-dashed bg-lightBlack rounded-2xl flex flex-col justify-center items-center'>
                     <img src={upload_img} alt="" className='h-[60px] w-[75px]'/>
@@ -44,6 +39,9 @@ const User = () => {
         </div>
         <div className='flex justify-center mt-4'>
             <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black">Check Resume</button>
+        </div>
+        <div className='p-6 pl-10 mt-8'>
+            <Table className='bg-black' />
         </div>
     </div>
     <Footer /> 
