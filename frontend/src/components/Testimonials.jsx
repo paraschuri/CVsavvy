@@ -2,73 +2,89 @@ import React from 'react'
 
 const Testimonials = () => {
   return (
-    <section className="flex flex-col items-center my-8">
-	<div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
-		<h1 className="text-2xl lg:text-4xl font-semibold text-center">What our customers are saying about us</h1>
+    <section className="my-8 text-white ">
+	<div className="container flex flex-col items-center mx-auto mb-12 md:p-10 md:px-12">
+		<h1 className="p-4 text-4xl font-semibold leadi text-center">What our customers are saying about us</h1>
 	</div>
-	<div className="container mx-auto flex flex-col lg:inline-grid lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2 items-center justify-center">
-		<div className="flex flex-col items-center justify-center max-w-lg my-2 lg:my-0 lg:mx-0">
-			<div className="relative text-center">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute top-0 left-0 w-8 h-8 dark:text-yellow-500">
-					<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-					<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-				</svg>
-				<p className="lg:px-6 p-0 py-1 text-xs lg:text-lg italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.</p>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute bottom-0 right-0 w-8 h-8 dark:text-yellow-500">
-					<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-					<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-				</svg>
+	<div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-center lg:px-10 ">
+		<div className="flex flex-col max-w-80 mx-4 my-6 shadow-lg">
+			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-4 bg-gradient-radial from-darkBlack to-black">
+				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-lightGreen">
+						<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
+						<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
+					</svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voludsafmdfasdfhptatibus quibusdam, eligendi exercitationem molestias possimus facere.
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-lightGreen">
+						<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
+						<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
+					</svg>
+				</p>
 			</div>
-			<span className="w-12 h-1 my-2 rounded-lg dark:bg-lightGreen"></span>
-			<p>Leroy Jenkins</p>
+			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg bgGradient text-black">
+				<img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full" />
+				<p className="text-xl font-semibold leadi">RESUME ANALYSIS</p>
+				<p className="text-sm uppercase">SANFJADSF</p>
+			</div>
 		</div>
-		<div className="flex flex-col items-center justify-center max-w-lg my-2 lg:my-0 lg:mx-0">
-			<div className="relative text-center">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute top-0 left-0 w-8 h-8 dark:text-yellow-500">
-					<path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-					<path fill="currentColor" d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-				</svg>
-				<p className="px-6 py-1 text-xs lg:text-lg italic">Accusantium illum cupiditate harum asperiores iusto quos quasi quis quae! Fugit doloribus, voluptatum quidem magnam velit excepturi nobis, reprehenderit ducimus incidunt quisquam quae veritatis, quos iure harum.</p>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute bottom-0 right-0 w-8 h-8 dark:text-yellow-500">
-					<path fill="currentColor" d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-					<path fill="currentColor" d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-				</svg>
+		<div className="flex flex-col max-w-80 mx-4 my-6 shadow-lg">
+			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-4 bg-gradient-radial from-darkBlack to-black">
+				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-lightGreen">
+						<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
+						<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
+					</svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voludsafmdfasdfhptatibus quibusdam, eligendi exercitationem molestias possimus facere.
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-lightGreen">
+						<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
+						<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
+					</svg>
+				</p>
 			</div>
-			<span className="w-12 h-1 my-2 rounded-lg dark:bg-lightGreen"></span>
-			<p>Leroy Jenkins</p>
+			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg bgGradient text-black">
+				<img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full" />
+				<p className="text-xl font-semibold leadi">RESUME ANALYSIS</p>
+				<p className="text-sm uppercase">SANFJADSF</p>
+			</div>
 		</div>
-		<div className="flex flex-col items-center justify-center max-w-lg my-2 lg:my-0 lg:mx-0">
-			<div className="relative text-center">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute top-0 left-0 w-8 h-8 dark:text-yellow-500">
-					<path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-					<path fill="currentColor" d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-				</svg>
-				<p className="px-6 py-1 text-xs lg:text-lg italic">Accusantium illum cupiditate harum asperiores iusto quos quasi quis quae! Fugit doloribus, voluptatum quidem magnam velit excepturi nobis, reprehenderit ducimus incidunt quisquam quae veritatis, quos iure harum.</p>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute bottom-0 right-0 w-8 h-8 dark:text-yellow-500">
-					<path fill="currentColor" d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-					<path fill="currentColor" d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-				</svg>
+		<div className="flex flex-col max-w-80 mx-4 my-6 shadow-lg">
+			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-4 bg-gradient-radial from-darkBlack to-black">
+				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-lightGreen">
+						<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
+						<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
+					</svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voludsafmdfasdfhptatibus quibusdam, eligendi exercitationem molestias possimus facere.
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-lightGreen">
+						<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
+						<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
+					</svg>
+				</p>
 			</div>
-			<span className="w-12 h-1 my-2 rounded-lg dark:bg-lightGreen"></span>
-			<p>Leroy Jenkins</p>
+			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg bgGradient text-black">
+				<img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full" />
+				<p className="text-xl font-semibold leadi">RESUME ANALYSIS</p>
+				<p className="text-sm uppercase">SANFJADSF</p>
+			</div>
 		</div>
-		<div className="flex flex-col items-center justify-center max-w-lg my-2 lg:my-0 lg:mx-0">
-			<div className="relative text-center">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute top-0 left-0 w-8 h-8 dark:text-yellow-500">
-					<path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-					<path fill="currentColor" d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-				</svg>
-				<p className="px-6 py-1 text-xs lg:text-lg italic">Accusantium illum cupiditate harum asperiores iusto quos quasi quis quae! Fugit doloribus, voluptatum quidem magnam velit excepturi nobis, reprehenderit ducimus incidunt quisquam quae veritatis, quos iure harum.</p>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute bottom-0 right-0 w-8 h-8 dark:text-yellow-500">
-					<path fill="currentColor" d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-					<path fill="currentColor" d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-				</svg>
+		<div className="flex flex-col max-w-80 mx-4 my-6 shadow-lg">
+			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-4 bg-gradient-radial from-darkBlack to-black">
+				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-lightGreen">
+						<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
+						<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
+					</svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voludsafmdfasdfhptatibus quibusdam, eligendi exercitationem molestias possimus facere.
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute right-0 w-8 h-8 text-lightGreen">
+						<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
+						<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
+					</svg>
+				</p>
 			</div>
-			<span className="w-12 h-1 my-2 rounded-lg dark:bg-lightGreen"></span>
-			<p>Leroy Jenkins</p>
+			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg bgGradient text-black">
+				<img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full" />
+				<p className="text-xl font-semibold leadi">RESUME ANALYSIS</p>
+				<p className="text-sm uppercase">SANFJADSF</p>
+			</div>
 		</div>
 	</div>
-    </section>
+</section>
   )
 }
 
