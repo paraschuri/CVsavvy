@@ -1,6 +1,6 @@
 import React from 'react'
 import upload_img from '../assets/upload.png'
-import Table from "../components/Table";
+import Table from "../components/TableRec";
 
 
 const Recruiter = () => {
@@ -20,7 +20,7 @@ const Recruiter = () => {
         <div className='flex flex-col justify-center items-center mt-8'>
           <div className='border-2 h-80 rounded-3xl w-5/6 flex flex-col justify-center items-center p-4 gap-4'>
             <div className="border-2 border-gray-600 rounded-xl w-full">
-                <select className="bg-transparent py-1.5 pl-8 text-gray-400 w-full placeholder:text-gray-900 text-xs sm:text-sm rounded-xl">
+                <select className="bg-transparent py-1.5 pl-7 text-gray-400 w-full placeholder:text-gray-900 text-xs sm:text-sm rounded-xl">
                   <option className='text-black'>Job Title</option>
                   <option className='text-black'>Software Engineer</option>
                   <option className='text-black'>Web Developer</option>
