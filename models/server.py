@@ -16,8 +16,8 @@ def hello_world():
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     file.save(filepath)
     text = extract_text(filepath)
+    print(text)
     return jsonify({'msg': 'done'})
 
 if __name__ == '__main__':
-
 	app.run(debug=True)

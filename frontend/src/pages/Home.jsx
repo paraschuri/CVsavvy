@@ -8,9 +8,11 @@ import About from "../components/About";
 import Testimonials from "../components/Testimonials";
 import features from "../components/features"
 import Footer from "../components/Footer";
+import { useAuthContext } from '../hooks/useAuthContext'
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    
+    const {user} = useAuthContext()
     return (
         <>
             {/* <GetStarted /> */}
@@ -24,7 +26,13 @@ const Home = () => {
                             <span className="textGradient mt-2 pr-8 text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl font-semibold "> CVsavvy</span>
                         </h1>
                         <p className="mt-4 sm:mt-8 lg:max-w-[600px] text-xs sm:text-sm md:w-full lg:ml-0">Our free <span className="font-semibold">AI-powered</span> resume checker scores your resume on key criteria recruiters and hiring managers look for. Get actionable steps to revamp your resume and <span className="font-semibold">land more interviews.</span></p>
-                        <button className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Check your Resume</button>
+                        <div className="lg: mt-10">
+                            {!user?<Link to="/start" className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Get Started</Link>:
+                            user.user?<Link to="/user" className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Check your Resume</Link>:
+                            <Link to="/recruiter" className="bgGradient py-2 px-6 mt-6 lg:mt-8 lg:ml-40 text-sm rounded-3xl font-semibold text-black">Rank the resume</Link>
+                            }
+                        </div>
+                        
                     </div>
                     <div className="mt-7 hidden lg:block">
                         <img src={hero_img} alt="hello" className="h-[350px] w-[400px]" />

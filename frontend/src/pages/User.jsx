@@ -49,7 +49,8 @@ const User = () => {
             <div className='border-2 h-96 w-96 lg:w-7/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col p-4 gap-4'>
                 <div className='w-full h-full border-2 border-dashed bg-lightBlack rounded-2xl flex flex-col justify-center items-center'>
                     {!file?<><img src={upload_img} alt="" className='h-[60px] w-[75px]'/>
-                    <p className=' text-darkBlack text-center'>Drag and Drop your files here or click here</p></>:
+                    <p className=' text-darkBlack text-center'>Drag and Drop your files here or click here</p>
+                    </>:
                     <div>
                         {file.name}
                     </div>
