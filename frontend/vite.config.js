@@ -10,6 +10,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/api/, ''),
       },
+      '/model':{
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/model/, ''),
+      }
     },
     host : true,
   },
