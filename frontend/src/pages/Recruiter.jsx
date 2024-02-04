@@ -1,9 +1,17 @@
 import React from 'react'
 import upload_img from '../assets/upload.png'
-import Table from "../components/TableRec";
-
+import TableRec from "../components/TableRec";
+import Loading from "../components/Loading";
+import { useCallback, useState } from 'react';
+import {useDropzone} from 'react-dropzone'
 
 const Recruiter = () => {
+  const [files,setFiles] = useState([]);
+
+  const onDrop = useCallback(acceptedFiles => {
+    setFiles(files=>[...files,acceptedFiles[0]])
+  }, [])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   return (
     <div className="text-white max-w-[1300px] px-20 mx-auto w-screen">
         <div className='mt-12 flex flex-col'>
@@ -47,27 +55,32 @@ const Recruiter = () => {
             </div>
           </div>
         </div>  
-        <div className='flex flex-col-reverse justify-center items-center lg:flex-row lg:place-content-around mt-8' >
-            <div className='border-2 h-20 lg:h-96 w-full lg:w-4/12 rounded-3xl border-solid mx-10 mt-7 flex justify-center items-end shadow-md shadow-slate-500'>
-                <div className='mb-4 w-auto'>
-                    Upload files
+        <div className='flex flex-col-reverse justify-center items-center lg:flex-row lg:place-content-around mt-6 m-2' >
+            <div className='border-2 h-20 lg:h-96 w-full lg:w-4/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col justify-start items-center shadow-md shadow-slate-500'>
+                <div className='my-3 w-auto'>Upload Files</div>
+                <div className='border-2 border-lightBlack rounded-3xl w-5/6'></div>
+                <div className='m-2 w-5/6 overflow-y-auto scrollbar-thumb-lightBlack scrollbar-thin scrollbar-thumb-rounded-3xl'>
+                    {
+                    files.map((file)=>(
+                      <p className='m-2'>{file.name}</p>
+                      ))
+                    }
                 </div>
             </div>
-            <div className='border-2 h-96 w-full lg:w-7/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col p-4 gap-4'>
+            <div className='border-2 h-96 w-full lg:w-7/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col p-4 gap-4' {...getRootProps()}>
                 <div className='w-full h-full border-2 border-dashed bg-lightBlack rounded-2xl flex flex-col justify-center items-center'>
                     <img src={upload_img} alt="" className='h-[60px] w-[75px]'/>
                     <p className=' text-darkBlack text-center'>Drag and Drop your files here</p>
                 </div>
-                <div className='flex justify-center p-2 border-2 rounded-2xl bg-darkBlack'>
-                    Upload files
-                </div>
+                <input {...getInputProps()} />
             </div>
         </div>
         <div className='flex justify-center mt-4'>
             <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black">Get Results</button>
         </div>
+        <div className='flex justify-center mt-4'><Loading /></div>
         <div className='p-6 pl-10 mt-8'>
-            <Table className='bg-black' />
+            <TableRec className='bg-black' />
         </div>
     </div>
   )

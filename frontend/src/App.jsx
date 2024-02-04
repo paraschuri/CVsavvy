@@ -8,11 +8,18 @@ import GetStarted from './pages/GetStarted'
 import LoginPage from './pages/LoginPage'
 import { useAuthContext } from './hooks/useAuthContext'
 import NotFound from './pages/NotFound'
+import { useEffect, useState } from 'react'
 
 function App() {
     const { user } = useAuthContext()
+    const [loading,setLoading] = useState(true);
+    useEffect(()=>{
+        setLoading(false);
+    },[])
     return (
         <>
+        {
+            !loading &&
             <BrowserRouter>
                 <Navbar />
                 <Routes>
@@ -63,6 +70,7 @@ function App() {
 
                 </Routes>
             </BrowserRouter>
+        }
         </>
     )
 }

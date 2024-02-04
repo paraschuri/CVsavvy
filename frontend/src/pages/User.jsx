@@ -3,7 +3,26 @@ import resume from '../assets/resumes.png'
 import upload_img from '../assets/upload.png'
 import Table from "../components/Table";
 import Footer from "../components/Footer"
+import { useCallback, useState } from 'react';
+import {useDropzone} from 'react-dropzone'
 const User = () => {
+    const [file,setFile] = useState(null);
+
+    const onDrop = useCallback(acceptedFiles => {
+        setFile(acceptedFiles[0]);
+    }, [])
+    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+    const handleSubmit = async() => {
+        if(!file)return;
+        const formData = new FormData();
+        formData.append('file', file);
+        const response = await fetch("/model",{
+            method: 'POST',
+            body: formData,
+        })
+        const json = await response.json()
+        console.log(json)
+    }
   return (
     <>
         <div className="text-white max-w-[1300px] px-10 pr-16 mx-auto pb-8 w-screen">
@@ -26,19 +45,22 @@ const User = () => {
             </div>
         </div>
         <div className='text-3xl lg:ml-10 mt-3 mb-7'>Concerned your resume isn't good enough? Get instant feedback and suggestions using our resume scanner.</div>
-        <div className='flex place-content-around' >
+        <div className='flex place-content-around' {...getRootProps()}>
             <div className='border-2 h-96 w-96 lg:w-7/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col p-4 gap-4'>
                 <div className='w-full h-full border-2 border-dashed bg-lightBlack rounded-2xl flex flex-col justify-center items-center'>
-                    <img src={upload_img} alt="" className='h-[60px] w-[75px]'/>
-                    <p className=' text-darkBlack text-center'>Drag and Drop your files here</p>
+                    {!file?<><img src={upload_img} alt="" className='h-[60px] w-[75px]'/>
+                    <p className=' text-darkBlack text-center'>Drag and Drop your files here or click here</p>
+                    </>:
+                    <div className='border-2 border-solid p-2 bg-darkBlack rounded-lg shadow-xl'>
+                        {file.name}
+                    </div>
+                    }
                 </div>
-                <button className='flex justify-center p-2 border-2 rounded-2xl'>
-                    Upload files
-                </button>
+                <input {...getInputProps()} className='flex justify-center p-2 border-2 rounded-2xl' />
             </div>
-        </div>
+        </div> 
         <div className='flex justify-center mt-4'>
-            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black">Check Resume</button>
+            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black" onClick={handleSubmit}>Check Resume</button>
         </div>
         <div className='p-6 pl-10 mt-8'>
             <Table className='bg-black' />

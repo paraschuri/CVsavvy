@@ -43,7 +43,7 @@ const TABLE_ROWS = [
 
 const Table = () => {
   return (
-    <Card className="  bg-lightBlack overflow-scroll md:overflow-auto h-full w-full max-w-[1300px] px-10">
+    <Card className="  bg-lightBlack overflow-scroll  scrollbar-thumb-lightBlack scrollbar-thin scrollbar-thumb-rounded-3xl md:overflow-auto h-full w-full max-w-[1300px] px-10">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
@@ -62,7 +62,7 @@ const Table = () => {
         </thead>
         <tbody>
           {TABLE_ROWS.map(({ name, job, location ,link}, index) => (
-            <tr key={name} className="even:bg-blue-gray-50/50">
+            <tr key={name} className="even:bg-blue-gray-50/50 hover:border-2 hover:rounded-lg">
               <td className="p-4">
                 <Typography variant="small" color="white" className="font-normal">
                   {name}

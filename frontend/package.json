@@ -1,5 +1,4 @@
 {
-  "proxy": "http://localhost:3000",
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
@@ -17,6 +16,7 @@
     "lucide-react": "^0.307.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-google-button": "^0.7.2",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.21.1",
