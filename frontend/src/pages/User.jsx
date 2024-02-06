@@ -7,7 +7,7 @@ import { useCallback, useState } from 'react';
 import {useDropzone} from 'react-dropzone'
 const User = () => {
     const [file,setFile] = useState(null);
-
+    const [data,setData] = useState([])
     const onDrop = useCallback(acceptedFiles => {
         setFile(acceptedFiles[0]);
     }, [])
@@ -16,12 +16,12 @@ const User = () => {
         if(!file)return;
         const formData = new FormData();
         formData.append('file', file);
-        const response = await fetch("/model",{
+        const response = await fetch("/model/user",{
             method: 'POST',
             body: formData,
         })
         const json = await response.json()
-        console.log(json)
+        setData(json)
     }
   return (
     <>
@@ -63,7 +63,7 @@ const User = () => {
             <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black" onClick={handleSubmit}>Check Resume</button>
         </div>
         <div className='p-6 pl-10 mt-8'>
-            <Table className='bg-black' />
+            <Table className='bg-black' data={data} />
         </div>
     </div>
     <Footer /> 

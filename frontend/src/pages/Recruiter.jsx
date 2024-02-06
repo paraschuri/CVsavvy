@@ -3,13 +3,41 @@ import upload_img from '../assets/upload.png'
 import Table from "../components/Table";
 import { useCallback, useState } from 'react';
 import {useDropzone} from 'react-dropzone'
+import { CiCircleRemove } from "react-icons/ci";
 
 const Recruiter = () => {
   const [files,setFiles] = useState([]);
-
+  const handleSubmit = async() => {
+    if(!files.length)return;
+    const formData = new FormData();
+    files.forEach((file, index) => {
+      formData.append(`file${index + 1}`, file);
+    });
+    const required_skills = "tensorflow pytorch keras numpy pandas opencv"
+    formData.append('length',files.length)
+    formData.append('skills',required_skills)
+    const response = await fetch("/model/recruiter",{
+        method: 'POST',
+        body: formData,
+    })
+    const json = await response.json()
+    console.log(json)
+}
   const onDrop = useCallback(acceptedFiles => {
+    files.map(file=>{
+      if(file.name===acceptedFiles[0].name){
+        alert('File already uploaded')
+        return 
+      }
+    })
+    console.log(flag)
     setFiles(files=>[...files,acceptedFiles[0]])
   }, [])
+  const handleRemove = (name) => {
+    setFiles(files.filter(file=>{
+      return file.name!==name;
+    }))
+  }
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   return (
     <div className="text-white max-w-[1300px] px-20 mx-auto w-screen">
@@ -59,8 +87,11 @@ const Recruiter = () => {
                 <div className='mb-4 w-auto'>
                     Upload files
                     {
-                      files.map((file)=>(
-                        <p>{file.name}</p>
+                      files.map((file,index)=>(
+                        <div className='flex gap-2'>
+                          <p>{file.name}</p>
+                          <button onClick={()=>handleRemove(file.name)}><CiCircleRemove/></button>
+                        </div>
                       ))
                     }
                 </div>
@@ -74,11 +105,11 @@ const Recruiter = () => {
             </div>
         </div>
         <div className='flex justify-center mt-4'>
-            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black">Get Results</button>
+            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black" onClick={handleSubmit}>Get Results</button>
         </div>
-        <div className='p-6 pl-10 mt-8'>
+        {/* <div className='p-6 pl-10 mt-8'>
             <Table className='bg-black' />
-        </div>
+        </div> */}
     </div>
   )
 }
