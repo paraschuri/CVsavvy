@@ -11,10 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 nlp = spacy.load('en_core_web_md')
 def domainJobs(user_domain):
-    options = webdriver.ChromeOptions()
-    options.debugger_address = "127.0.0.1:9222"
-    driver = webdriver.Chrome(options=options)
-    # driver = webdriver.Chrome()
+    driver = webdriver.Chrome()
     driver.get("https://www.glassdoor.com/Job/india-{}-jobs-SRCH_IL.0,5_IN115_KO6,{}.htm".format(user_domain,len(user_domain)+6))
     resp = driver.page_source
     soup=BeautifulSoup(resp,'html.parser')
