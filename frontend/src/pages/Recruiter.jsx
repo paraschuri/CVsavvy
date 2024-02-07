@@ -4,13 +4,41 @@ import TableRec from "../components/TableRec";
 import Loading from "../components/Loading";
 import { useCallback, useState } from 'react';
 import {useDropzone} from 'react-dropzone'
+import { CiCircleRemove } from "react-icons/ci";
 
 const Recruiter = () => {
   const [files,setFiles] = useState([]);
-
+  const handleSubmit = async() => {
+    if(!files.length)return;
+    const formData = new FormData();
+    files.forEach((file, index) => {
+      formData.append(`file${index + 1}`, file);
+    });
+    const required_skills = "tensorflow pytorch keras numpy pandas opencv"
+    formData.append('length',files.length)
+    formData.append('skills',required_skills)
+    const response = await fetch("/model/recruiter",{
+        method: 'POST',
+        body: formData,
+    })
+    const json = await response.json()
+    console.log(json)
+}
   const onDrop = useCallback(acceptedFiles => {
+    files.map(file=>{
+      if(file.name===acceptedFiles[0].name){
+        alert('File already uploaded')
+        return 
+      }
+    })
+    console.log(flag)
     setFiles(files=>[...files,acceptedFiles[0]])
   }, [])
+  const handleRemove = (name) => {
+    setFiles(files.filter(file=>{
+      return file.name!==name;
+    }))
+  }
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   return (
     <div className="text-white max-w-[1300px] px-20 mx-auto w-screen">
@@ -61,8 +89,11 @@ const Recruiter = () => {
                 <div className='border-2 border-lightBlack rounded-3xl w-5/6'></div>
                 <div className='m-2 w-5/6 overflow-y-auto scrollbar-thumb-lightBlack scrollbar-thin scrollbar-thumb-rounded-3xl'>
                     {
-                    files.map((file)=>(
-                      <p className='m-2'>{file.name}</p>
+                      files.map((file,index)=>(
+                        <div className='flex gap-2'>
+                          <p>{file.name}</p>
+                          <button onClick={()=>handleRemove(file.name)}><CiCircleRemove/></button>
+                        </div>
                       ))
                     }
                 </div>
@@ -76,10 +107,10 @@ const Recruiter = () => {
             </div>
         </div>
         <div className='flex justify-center mt-4'>
-            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black">Get Results</button>
+            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black" onClick={handleSubmit}>Get Results</button>
         </div>
-        <div className='flex justify-center mt-4'><Loading /></div>
-        <div className='p-6 pl-10 mt-8'>
+        <div className='flex justify-center mt-4 '><Loading /></div>
+        <div className='p-6 pl-10 mt-8 h-[600px]'>
             <TableRec className='bg-black' />
         </div>
     </div>

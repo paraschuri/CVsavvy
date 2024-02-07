@@ -4,15 +4,19 @@ import { IoClose } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { useEffect } from "react";
 
 const Navbar = () => {
     const location = useLocation();
-    const path = location.pathname.slice(-5);
     const [isOpen,setIsOpen] = useState(false);
-    const [active,setActive] = useState(path);
+    const [active,setActive] = useState("Null");
     const {logout} = useLogout()
     const {user} = useAuthContext()
-
+    useEffect(()=>{
+        let path = location.pathname.split('/')
+        path = path[path.length-1]
+        setActive(path)
+    },[])
     return (
         <nav className="w-full shadow-md shadow-[#71767c] z-10 sticky top-0 left-0 bg-[#474B4F]">
             <div className='md:flex mx-auto bg-[#474B4F] m-auto items-center justify-between py-[0.3rem] px-4 md:px-12 lg:px-24'>
@@ -21,12 +25,20 @@ const Navbar = () => {
                     <li className="'lg:ml-8 lg:my-0 my-6">
                         <Link to ="/" className={` hover:text-lightGreen ${active==="home"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("home")}}>HOME</Link>
                     </li>
+                    {
+                        user && (
+                            user.user?
+                            <li className="'lg:ml-8 lg:my-0 my-6">
+                                <Link to="/user" className={` hover:text-lightGreen ${active==="user"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>USER</Link>
+                            </li>:
+                            <li className="'lg:ml-8 lg:my-0 my-6">
+                                <Link to="/recruiter" className={` hover:text-lightGreen ${active==="recruiter"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>RECRUITER</Link>
+                            </li>
+                        )
+                    }
                     <li className="'lg:ml-8 lg:my-0 my-6">
-                        <Link to="/user" className={` hover:text-lightGreen ${active==="user"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>ABOUT US</Link>
+                        <Link to="/about" className={` hover:text-lightGreen ${active==="about"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>ABOUT US</Link>
                     </li>
-                    {/* <li className="'lg:ml-8 lg:my-0 my-6">
-                        <Link to="/recruiter" className={`hover:text-lightGreen ${active==="recruiter"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("recruiter")}}>CONTACT US</Link>
-                    </li> */}
                     <li className="'lg:ml-8 lg:my-0 my-6">
                         <Link to="/ContactUs" className={`hover:text-lightGreen ${active==="contact"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("contact")}}>CONTACT US</Link>
                     </li>

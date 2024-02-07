@@ -13,6 +13,10 @@
   background: linear-gradient(to right, #56e356 , #028e02);
 }
 
+.bgHover:hover{
+  background: linear-gradient(to right, #56e356 , #028e02);
+}
+
 body{
   font-family: 'Montserrat';
   background-color: #222629;
