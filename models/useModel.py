@@ -6,12 +6,16 @@ import re
 import spacy
 from api_key import key
 import requests
+from selenium.webdriver.chrome.options import Options
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 nlp = spacy.load('en_core_web_md')
 def domainJobs(user_domain):
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36")
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get("https://www.glassdoor.com/Job/india-{}-jobs-SRCH_IL.0,5_IN115_KO6,{}.htm".format(user_domain,len(user_domain)+6))
     resp = driver.page_source
     soup=BeautifulSoup(resp,'html.parser')
@@ -21,14 +25,14 @@ def domainJobs(user_domain):
     o = {}
     for job in allJobs:
         try:
-            name = job.find("span",{"class":"EmployerProfile_employerName__Xemli"}).text
+            name = job.find("span",{"class":"EmployerProfile_employerName__8w0tV"}).text
             if name[-1].isdigit():
                 name = name[:-3]
             o["company"] = name
         except:
             o["company"]=None
         try:
-            o["job"]=job.find("a",{"class":"JobCard_seoLink__WdqHZ"}).text
+            o["job"]=job.find("a",{"class":"JobCard_jobTitle__rbjTE"}).text
         except:
             o["job"]=None
         try:
@@ -51,12 +55,12 @@ def domainJobs(user_domain):
         except:
             o["salary"]=None
         try:
-            link = allJobs[0].find("a",{"class":"JobCard_seoLink__WdqHZ"})
+            link = job.find("a",{"class":"JobCard_jobTitle__rbjTE"})
             o["apply"]= link["href"]
         except:
             o["apply"]=None
         try:
-            logo = job.find("img",{"class":"EmployerLogo_logo__8KXYt"})
+            logo = job.find("img")
             o["logo"] = logo["src"]
         except:
             o["logo"] = None
@@ -103,13 +107,14 @@ def getCourses(user_skill):
     }
     params = {
         "search": user_skill,
-        "page_size": 3
+        "page_size": 1
     }
     res = requests.get(url,headers=headers,params=params)
     data = res.json()['results']
     courses = []
+    user_skill = user_skill.upper()
     for course in data:
-        courses.append({'title':course['title'],'link':f"https://www.udemy.com{course['url']}",'headline':course['headline'],'price':course['price'],'image':course['image_480x270']})
+        courses.append({'title':course['title'],'link':f"https://www.udemy.com{course['url']}",'headline':course['headline'],'price':course['price'],'image':course['image_480x270'],'skill':user_skill})
     return courses
 
 def getJobs(resume_text,doc):
@@ -126,19 +131,19 @@ def getJobs(resume_text,doc):
     user_domain = domainSimilarity[0][0]
     user_domain = user_domain.replace(' ','-')
     user_jobs = domainJobs(user_domain)
-    domain_courses = {}
+    domain_courses = []
     for i,(domain,keyword,_) in enumerate(domainSimilarity,0):
         if i and i<=3:
             cnt = 0
             keyword_list = keyword.split(' ')
+            curr_skills = {"domain":domain,"course":[]}
             for skill in keyword_list:
                 if skill not in cand_skills:
-                    if domain not in domain_courses.keys():
-                        domain_courses[domain] = []
-                    domain_courses[domain].append((skill,getCourses(skill)))
+                    curr_skills["course"].append(getCourses(skill)[0])
                     cnt+=1
                 if cnt==3:
                     break
+            domain_courses.append(curr_skills)
     return user_jobs,domain_courses,user_domain
             
 
@@ -172,7 +177,7 @@ def rank_resume(resume_docs,required_skills):
                     experience = 1
         cand_skills = merge_skills(pred_skills,text,skills_df)
         cand_skills = cand_skills.lower().strip()
-        score = get_similarity(required_skills,cand_skills)
+        score = round(get_similarity(required_skills,cand_skills),2)
         domain = domain_similarity(cand_skills,keywords)[0][0]
         if experience:
             score = float(min(100.0,score+3.0))

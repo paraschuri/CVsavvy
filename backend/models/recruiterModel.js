@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
 const recruiterSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
@@ -9,11 +13,12 @@ const recruiterSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
     },
-    name:{
-        type: String,
-        required: true
+    googleId: {
+        type: String
+    },
+    githubId: {
+        type: String
     }
 })
 
@@ -35,7 +40,6 @@ recruiterSchema.statics.signup = async function (email,password,name){
 
     const salt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(password,salt)
-    
     const user = await this.create({email,password:hash,name})
     return user
 }

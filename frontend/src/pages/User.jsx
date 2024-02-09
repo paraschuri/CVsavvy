@@ -7,10 +7,11 @@ import { useCallback, useState } from 'react';
 import {useDropzone} from 'react-dropzone'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
+import Courses from '../components/Courses'
 const User = () => {
     const [file,setFile] = useState(null);
     const [data,setData] = useState([])
-    const [status,setStatus] = useState("Null")
+    const [status,setStatus] = useState("")
     const [courses,setCourses] = useState([])
     const [domain,setDomain] = useState("")
     
@@ -28,7 +29,7 @@ const User = () => {
             body: formData,
         })
         const json = await response.json()
-        console.log(json)
+        console.log(json["courses"])
         setData(json["jobs"])
         setStatus("Done")
         setCourses(json["courses"])
@@ -42,20 +43,21 @@ const User = () => {
                     <img src={resume} alt="hello" className="h-[300px] w-[350px]" />
             </div>
             <div className="lg:mt-12 lg:w-[67%] lg:ml-10 lg:block flex flex-col items-center mt-16 ">
-                <div className=" text-lightGreen text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl mx-w-[530] font-semibold ">Make Your Mark: 
-                    <span className="text-white text-xl ml-0 block min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl font-medium lg:ml-0"> Ensure Your Resume Stands Out for All the Right Reasons!</span>
-                    <div className='text-white font-normal flex flex-col gap-3 text-sm mt-5'>
-                        <p>Rank higher among peers with our <span className="font-semibold">AI-powered</span> evaluation.</p>
-                        <p>Sidestep errors and enhance your resume with personalized tips.</p>
-                        <p>Craft visually appealing resumes for maximum impact.</p>
-                    </div>
+                <div className=" textGradient text-xl min-[440px]:text-2xl min-[540px]:text-3xl sm:text-4xl mx-w-[530] font-semibold ">
+Welcome to Your Personalized Job Search Hub!
                 </div>
+                    <div className='text-white font-normal flex flex-col gap-3 text-base mt-5'>
+                        <p><span className="font-semibold">Resume Analysis: </span>Upload your resume to extract relevant skills and experience using AI.</p>
+                        <p><span className="font-semibold">Personalized Job Recommendations: </span>Discover tailored job opportunities based on your profile and preferences from Glassdoor.</p>
+                        <p><span className="font-semibold">Course Suggestions: </span>Receive personalized course recommendations to enhance your skills and qualifications.</p>
+                    </div>
             </div>
             <div className="mt-7 hidden lg:block">
                 <img src={resume} alt="hello" className="h-[300px] w-[400px]" />
             </div>
         </div>
-        <div className='text-3xl lg:ml-10 mt-3 mb-7'>Concerned your resume isn't good enough? Get instant feedback and suggestions using our resume scanner.</div>
+        <div className='text-3xl lg:ml-10 mt-3 mb-7'>Ready to Get Started?
+Upload your resume now and take control of your career journey!</div>
         <div className='flex place-content-around' {...getRootProps()}>
             <div className='border-2 h-96 w-96 lg:w-7/12 rounded-3xl border-solid mx-10 mt-7 flex flex-col p-4 gap-4'>
                 <div className='w-full h-full border-2 border-dashed bg-lightBlack rounded-2xl flex flex-col justify-center items-center'>
@@ -71,7 +73,7 @@ const User = () => {
             </div>
         </div> 
         <div className='flex justify-center mt-4'>
-            <button className="bgGradient py-2 px-6 mt-6 text-sm rounded-3xl font-semibold text-black" onClick={handleSubmit}>Check Resume</button>
+            <button className={`${status==="Loading"?"bg-lightBlack text-gray-500":"bgGradient text-black"} py-2 px-6 mt-6 text-sm rounded-3xl font-semibold `} onClick={handleSubmit} disabled={status==="Loading"}>Check Resume</button>
         </div>
         {
             status==="Loading" &&
@@ -87,9 +89,11 @@ const User = () => {
                 <Table className='bg-black' job_data={data} />
             </div>
         }
-
+        {
+            status==="Done" &&
+            <Courses courses={courses}/>
+        }
     </div>
-    <Footer /> 
     </>
   )
 }

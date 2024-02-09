@@ -34,7 +34,6 @@ const LoginPage = ({isUser,isLogin}) => {
         isLogin?<Login isUser={isUser} />:<Signup isUser={isUser} />
       }
     </div>
-    <Footer />
   </>
   );
 };

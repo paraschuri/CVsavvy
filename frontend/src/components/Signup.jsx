@@ -4,18 +4,46 @@ import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
+import { AiFillGoogleCircle } from "react-icons/ai";
+import { FaGithub } from "react-icons/fa";
+import {githubLogin,googleLogin} from "../components/FirebaseLogin"
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const SignUp = ({isUser}) => {
   const [name,setName] = useState("");
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-  const {signup, error, setError, isLoading} = useSignup()
-  
+  const {signup, error, setError,setIsLoading, isLoading} = useSignup()
+  const { dispatch } = useAuthContext()
   const handleSubmit = async(e)=>{
     e.preventDefault();
     await signup(name,email,password,isUser)
   }
-
+  const handleSignup = async (social) => {
+    let user = null
+    if(social === "google"){
+      user = await googleLogin()
+    }
+    else{
+      user = await githubLogin()
+    }
+    const response = await fetch(`/api/login/${isUser?"user":"recruiter"}/${social}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({user})
+    })
+    const json = await response.json()
+    json.user = isUser
+    if (!response.ok){
+      setIsLoading(false)
+      setError(response.error)
+    }
+    else {
+      localStorage.setItem("data", JSON.stringify(json))
+      dispatch({ type: 'LOGIN', payload: json })
+      setIsLoading(false)
+    }
+  };
   return (
     <div className="min-h-max sm:w-96 flex items-center justify-center m-auto py-4 px-6 mb-60 w-[20.5rem]
      border-green-500 border-2 rounded-md rounded-t-none shadow-md shadow-lightGreen shadow-t-none">
@@ -51,16 +79,16 @@ const SignUp = ({isUser}) => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
+          <div className="flex justify-evenly">
+            <div className="flex justify-evenly">
               <input id="remember_me" name="remember_me" type="checkbox" className="h-4 w-4" />
-              <label htmlFor="remember_me" className="ml-2 block text-sm text-white rounded-3xl">
+              <label htmlFor="remember_me" className="ml-2 inline text-xs md:text-sm text-white rounded-3xl">
                 Remember me
               </label>
             </div>
 
-            <div className="text-sm">
-              <a href="#" className="font-medium text-darkGreen hover:text-lightGreen">
+            <div className="">
+              <a href="#" className="font-medium text-xs md:text-sm text-darkGreen hover:text-lightGreen">
                 Forgot your password?
               </a>
             </div>
@@ -71,7 +99,15 @@ const SignUp = ({isUser}) => {
               SIGN UP 
             </button>
           </div>
-        
+          <div className='text-white flex justify-center'> 
+            <hr className='w-[70%] my-auto font-thin'/> 
+            <div className='w-full text-xs md:text-sm flex justify-center'> Or continue with </div>
+            <hr className='w-[70%] my-auto font-thin'/>
+          </div>
+          <div className='flex justify-center items-center m-0'>
+            <AiFillGoogleCircle onClick={()=>{handleSignup("google")}} size={45} className='hover:text-lightGreen mr-2 cursor-pointer transition-all duration-500'/>
+            <FaGithub size={45} onClick={()=>{handleSignup("github")}} className='hover:text-lightGreen cursor-pointer ml-2 transition-all duration-500'/>
+          </div>
         </form>
       </div>
       {error &&

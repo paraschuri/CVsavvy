@@ -9,7 +9,8 @@ import LoginPage from './pages/LoginPage'
 import { useAuthContext } from './hooks/useAuthContext'
 import NotFound from './pages/NotFound'
 import { useEffect, useState } from 'react'
-
+import AboutUs from './components/AboutUs'
+import Footer from './components/Footer'
 function App() {
     const { user } = useAuthContext()
     const [loading,setLoading] = useState(true);
@@ -64,11 +65,15 @@ function App() {
                         element={(user && !user.user) ? <Navigate to="/recruiter" />:<LoginPage isUser={false} isLogin={true} />}
                     />
                     <Route
+                        path="/about"
+                        element={<AboutUs/>}
+                    />
+                    <Route
                         path="*"
                         element={<NotFound />}
                     />
-
                 </Routes>
+                <Footer />
             </BrowserRouter>
         }
         </>

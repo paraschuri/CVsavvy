@@ -23,14 +23,14 @@ const GetStarted = () => {
           <div className="flex flex-col mb-6">
             <button
               onClick={() => setSelected("recruiter")}
-              className="bg-white text-black font-bold p-3 rounded-md mb-8 flex border-2 border-transparent hover:border-lightGreen focus:border-darkGreen"
+              className={`${selected==="recruiter"?"bgGradient":"bg-white"} text-black font-bold p-3 rounded-md mb-8 flex border-2 border-transparent hover:border-lightGreen focus:border-darkGreen`}
             >
               <Search size={40} className="lg:mx-4" />
               <div className="flex">I am here to hire some talent</div>
             </button>
             <button
               onClick={() => setSelected("user")}
-              className="bg-white text-black font-bold p-3 rounded-md mb-6 flex border-2 border-transparent hover:border-lightGreen focus:border-darkGreen"
+              className={`${selected==="user"?"bgGradient":"bg-white"} text-black font-bold p-3 rounded-md mb-6 flex border-2 border-transparent hover:border-lightGreen focus:border-darkGreen`}
             >
               <CornerDownRight size={40} className="lg:mx-4" />I am here to
               improve my resume
@@ -65,9 +65,9 @@ const GetStarted = () => {
 
         {/* Image on the right */}
       </div>
-      <div className="lg:flex justify-start w-[600px] h-[600px] pb-16 hidden">
+      <div className="lg:flex justify-start pb-16 hidden">
         {selected && (
-          <img src={selected==='user'?user:recruiter} alt="Selected" className="object-contain" />
+          <img src={selected==='user'?user:recruiter} alt="Selected" className="object-contain transition-all duration-500" />
         )}
       </div>
     </div>

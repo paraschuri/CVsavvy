@@ -14,7 +14,6 @@ export const useLogin = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         })
-
         const json = await response.json()
         json.user = isUser
         
@@ -30,5 +29,5 @@ export const useLogin = () => {
             setIsLoading(false)
         }
     }
-    return { login, isLoading,setError, error }
+    return { login,setIsLoading,isLoading,setError, error }
 }

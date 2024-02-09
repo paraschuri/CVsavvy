@@ -6,22 +6,22 @@ const features=[
     {
         "name": "RESUME ANAYLSIS",
         "img" : feature1,
-        "info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut voluptas beatae doloremque cumque laborum ab aperiam, reprehenderit saepe dolore nihil repellat, fuga dolores, quos impedit nam tempora unde quasi.",
+        "info": "CVsavvy navigates the ocean of resumes, going beyond basics to analyze impact. Refining word choice, style, and brevity, we tailor modifications to help you sail through the recruitment process with ease and confidence.",
     },
     {
-        "name": "DATA VISUALIZATION",
+        "name": "COURSE RECOMMENDATION",
         "img" : feature2,
-        "info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut voluptas beatae doloremque cumque laborum ab aperiam, reprehenderit saepe dolore nihil repellat, fuga dolores, quos impedit nam tempora unde quasi.",
+        "info": "We go beyond empty promises, offering a reality check on your competitive standing identifying areas for improvement and provides tailored courses to enhance your skills.",
     },
     {
         "name": "RESUME RANKING",
         "img" : feature3,
-        "info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut voluptas beatae doloremque cumque laborum ab aperiam, reprehenderit saepe dolore nihil repellat, fuga dolores, quos impedit nam tempora unde quasi.",
+        "info": "Stay ahead of the competition with CVsavvy. Our ranking feature compares your resume with our extensive database, providing a reality check and pinpointing areas for improvement, ensuring your success.",
     },
     {
         "name": "COMPANY SUGGESTION",
         "img": feature4,
-        "info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut voluptas beatae doloremque cumque laborum ab aperiam, reprehenderit saepe dolore nihil repellat, fuga dolores, quos impedit nam tempora unde quasi.",
+        "info":"We match you with ideal companies based on your interests and skills, providing the best options to choose from . Our accurate tracking system lands you where you are valued the most .",
     },
 ];
 export default features;

@@ -31,5 +31,5 @@ export const useSignup = () => {
             setIsLoading(false)
         }
     }
-    return { signup, isLoading, error, setError }
+    return { signup,setIsLoading, isLoading, error, setError }
 }

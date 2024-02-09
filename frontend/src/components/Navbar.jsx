@@ -18,7 +18,7 @@ const Navbar = () => {
         setActive(path)
     },[])
     return (
-        <nav className="w-full shadow-md shadow-[#71767c] z-10 sticky top-0 left-0 bg-[#474B4F]">
+        <nav className="w-screen shadow-md shadow-[#71767c] z-10 sticky top-0 left-0 bg-[#474B4F]">
             <div className='md:flex mx-auto bg-[#474B4F] m-auto items-center justify-between py-[0.3rem] px-4 md:px-12 lg:px-24'>
                 <Link to="/"  className="font-bold textGradient text-2xl py-1 cursor-pointer"><span className="text-4xl">CV</span>SAVVY</Link>
                 <ul className={`absolute left-0 w-full lg:w-auto lg:flex lg:items-center lg:gap-4 pb-6 lg:pb-0 lg:static bg-[#474B4F] lg:z-auto z-[-1] lg:pl-24 pl-10 ${isOpen ? 'top-12 transition-all duration-400 ease-in':'top-[-500px]'}`}>

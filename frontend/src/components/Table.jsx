@@ -237,7 +237,7 @@ function PaginationNav1({
   }, [pageCount, pageIndex]);
   return (
     <ul className="flex gap-2">
-      <li>
+      <li className="hidden sm:block">
         <Button2
           content={
             <div className="flex ml-1">
@@ -252,7 +252,7 @@ function PaginationNav1({
       <li>
         <Button2
           content={
-            <div className="flex ml-1">
+            <div className="flex ml-2">
               {/* <FaChevronLeft size="0.6rem" /> */}
               <FaChevronLeft size="0.6rem" className="-translate-x-1/2" />
             </div>
@@ -265,7 +265,7 @@ function PaginationNav1({
       <li>
         <Button2
           content={
-            <div className="flex ml-1">
+            <div className="flex ml-3">
               <FaChevronRight size="0.6rem" className="-translate-x-1/2" />
             </div>
           }
@@ -273,7 +273,7 @@ function PaginationNav1({
           disabled={!canNextPage}
         />
       </li>
-      <li>
+      <li className="hidden sm:block">
         <Button2
           content={
             <div className="flex ml-1">

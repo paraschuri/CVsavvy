@@ -4,16 +4,45 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {useLogin} from "../hooks/useLogin"
 import { IoClose } from 'react-icons/io5';
-
+import { AiFillGoogleCircle } from "react-icons/ai";
+import { FaGithub } from "react-icons/fa";
+import {githubLogin,googleLogin} from "../components/FirebaseLogin"
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const Login = ({isUser}) => {
+  const {login,error,setError,setIsLoading,isLoading} = useLogin()
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-  const {login,error,setError,isLoading} = useLogin()
+  const { dispatch } = useAuthContext()
   const handleSubmit = async(e)=>{
     e.preventDefault();
     await login(email,password,isUser)
   }
+  const handleLogin = async (social) => {
+    let user = null
+    if(social === "google"){
+      user = await googleLogin()
+    }
+    else{
+      user = await githubLogin()
+    }
+    const response = await fetch(`/api/login/${isUser?"user":"recruiter"}/${social}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({user})
+    })
+    const json = await response.json()
+    json.user = isUser
+    if (!response.ok){
+      setIsLoading(false)
+      setError(response.error)
+    }
+    else {
+      localStorage.setItem("data", JSON.stringify(json))
+      dispatch({ type: 'LOGIN', payload: json })
+      setIsLoading(false)
+    }
+  };
   return (
     <div className="min-h-max sm:w-96 flex items-center justify-center mx-auto py-4 px-6 w-[20.5rem] mb-72
      border-green-500 border-2 rounded-md rounded-t-none backdrop-blur-3xl shadow-md shadow-green-400">
@@ -42,16 +71,16 @@ const Login = ({isUser}) => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
+          <div className="flex justify-evenly">
+            <div className="flex justify-evenly">
               <input id="remember_me" name="remember_me" type="checkbox" className="h-4 w-4" />
-              <label htmlFor="remember_me" className="ml-2 block text-sm text-white rounded-3xl">
+              <label htmlFor="remember_me" className="ml-2 inline text-xs md:text-sm text-white rounded-3xl">
                 Remember me
               </label>
             </div>
 
-            <div className="text-sm">
-              <a href="#" className="flex justify-center items-end font-medium text-darkGreen hover:text-lightGreen">
+            <div className='flex'>
+              <a href="#" className="flex justify-around text-xs lg:text-sm font-medium text-darkGreen hover:text-lightGreen">
                 Forgot your password?
               </a>
             </div>
@@ -61,6 +90,16 @@ const Login = ({isUser}) => {
             <button type="submit" disabled={isLoading} className={`${isLoading?"bg-gray-400 text-gray-600":"bgGradient"}group relative w-full flex justify-center pt-2 pb-1 px-4 border border-transparent text-sm font-medium rounded-3xl text-white bgGradient focus:outline-none focus:ring-2 focus:ring-offset-black focus:ring-green-600`}>
               LOG IN 
             </button>
+          </div>
+          
+          <div className='text-white flex justify-center'> 
+            <hr className='w-[70%] my-auto font-thin'/> 
+            <div className='w-full text-xs md:text-sm flex justify-center'> Or continue with </div>
+            <hr className='w-[70%] my-auto font-thin'/>
+          </div>
+          <div className='flex justify-center items-center m-0'>
+            <AiFillGoogleCircle size={45} className='hover:text-lightGreen mr-2 cursor-pointer transition-all duration-500' onClick={()=>{handleLogin("google")}}/>
+            <FaGithub size={45} className='hover:text-lightGreen cursor-pointer ml-2 transition-all duration-500' onClick={()=>{handleLogin("github")}}/>
           </div>
         </form>
       </div>
