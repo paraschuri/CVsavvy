@@ -94,6 +94,7 @@ Upload your resume now and take control of your career journey!</div>
             <Courses courses={courses}/>
         }
     </div>
+    <Footer />
     </>
   )
 }

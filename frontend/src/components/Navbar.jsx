@@ -32,12 +32,12 @@ const Navbar = () => {
                                 <Link to="/user" className={` hover:text-lightGreen ${active==="user"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>USER</Link>
                             </li>:
                             <li className="'lg:ml-8 lg:my-0 my-6">
-                                <Link to="/recruiter" className={` hover:text-lightGreen ${active==="recruiter"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>RECRUITER</Link>
+                                <Link to="/recruiter" className={` hover:text-lightGreen ${active==="recruiter"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("recruiter")}}>RECRUITER</Link>
                             </li>
                         )
                     }
                     <li className="'lg:ml-8 lg:my-0 my-6">
-                        <Link to="/about" className={` hover:text-lightGreen ${active==="about"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("user")}}>ABOUT US</Link>
+                        <Link to="/about" className={` hover:text-lightGreen ${active==="about"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("about")}}>ABOUT US</Link>
                     </li>
                     <li className="'lg:ml-8 lg:my-0 my-6">
                         <Link to="/ContactUs" className={`hover:text-lightGreen ${active==="contact"?"text-lightGreen":"text-white"}`} onClick={()=>{setIsOpen(false);setActive("contact")}}>CONTACT US</Link>

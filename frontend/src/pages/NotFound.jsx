@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 const NotFound = () => {
   return (
-    
+
     <div class="w-full bg-darkBlack justify-center flex mt-6">
       <div class="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-50">
               <div class="w-full lg:w-1/2 mx-8">

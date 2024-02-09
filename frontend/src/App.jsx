@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage'
 import { useAuthContext } from './hooks/useAuthContext'
 import NotFound from './pages/NotFound'
 import { useEffect, useState } from 'react'
-import AboutUs from './components/AboutUs'
+import AboutUs from './pages/AboutUs'
 import Footer from './components/Footer'
 function App() {
     const { user } = useAuthContext()
@@ -73,7 +73,6 @@ function App() {
                         element={<NotFound />}
                     />
                 </Routes>
-                <Footer />
             </BrowserRouter>
         }
         </>

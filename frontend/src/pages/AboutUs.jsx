@@ -1,5 +1,6 @@
 import React from 'react';
 import boy_img from "../assets/boy.png"
+import Footer from '../components/Footer';
 
 const AboutUs = () => {
   return (
@@ -39,6 +40,7 @@ const AboutUs = () => {
                 </div>
             </div>
         </div>
+        <Footer />
     </>
   );
 };

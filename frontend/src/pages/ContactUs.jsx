@@ -15,6 +15,7 @@ const ContactUs = () => {
         setMessage("")
     }
   return (
+    <>
         <div className="p-4 py-6 rounded-3xl w-5/6 max-w-[800px] my-10 mx-auto bg-lightBlack md:p-8">
             <form onSubmit={handleSubmit}>
                 <div className="-mx-2 md:items-center md:flex">
@@ -44,6 +45,8 @@ const ContactUs = () => {
                 </Button>
             </form>
         </div>
+        <Footer />
+    </>
   )
 }
 

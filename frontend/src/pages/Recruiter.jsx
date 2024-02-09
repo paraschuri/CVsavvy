@@ -153,6 +153,7 @@ const Recruiter = () => {
           </div>
         }
     </div>
+    <Footer />
     </>
   )
 }

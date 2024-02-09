@@ -88,7 +88,7 @@ const Home = () => {
                 </div>
                 <Testimonials />
             </div>
-            
+            <Footer />
         </>
     );
 }
