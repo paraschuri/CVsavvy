@@ -11,9 +11,9 @@ const GetStarted = () => {
   const path = location.pathname.slice(-5);
   
   return (
-    <div className="flex flex-row items-start justify-start bg-darkBlack mt-[5%] mb-8 mx-12 lg:ml-[15%]">
+    <div className="flex flex-row items-start justify-start bg-darkBlack mt-[5%] mb-8 mx-8 md:mx-12 lg:ml-[15%]">
       <div className="flex flex-col w-full max-w-4xl">
-        <div className="text-white flex text-xl lg:text-4xl w-2/3 lg:w-[450px] font-bold">
+        <div className="text-white flex text-xl lg:text-4xl lg:w-[450px] font-bold">
           HOW DO YOU WANT TO USE CVSAVVY
         </div>
         <div className="text-white flex text-md py-4 font-thin">
@@ -65,7 +65,7 @@ const GetStarted = () => {
 
         {/* Image on the right */}
       </div>
-      <div className="lg:flex justify-start pb-16 hidden">
+      <div className="lg:flex justify-start w-[600px] h-[600px] pb-16 hidden">
         {selected && (
           <img src={selected==='user'?user:recruiter} alt="Selected" className="object-contain transition-all duration-500" />
         )}

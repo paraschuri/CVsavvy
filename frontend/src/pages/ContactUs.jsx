@@ -9,6 +9,7 @@ const ContactUs = () => {
     const [message,setMessage] = useState("")
     const handleSubmit = (e) =>{
         e.preventDefault()
+        alert("Message Received")
         setFirstName("")
         setLastName("")
         setEmail("")

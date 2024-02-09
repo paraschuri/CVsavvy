@@ -15,6 +15,9 @@ const Navbar = () => {
     useEffect(()=>{
         let path = location.pathname.split('/')
         path = path[path.length-1]
+        if(path===""){
+            path="home"
+        }
         setActive(path)
     },[])
     return (
