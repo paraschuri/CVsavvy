@@ -2,12 +2,13 @@ const express = require('express')
 require('dotenv').config();
 const PORT = process.env.PORT;
 const MONGO_URI = process.env.MOGO_URI;
-
 const app = express()
 const mongoose = require('mongoose');
 const loginRoutes = require('./routes/loginRoutes')
-app.use(express.json())
+const cors = require('cors');
 
+app.use(express.json())
+app.use(cors());
 app.use((req,res,next)=>{
     console.log(req.path,req.method);
     next();

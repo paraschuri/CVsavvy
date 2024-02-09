@@ -9,7 +9,7 @@ export const useLogin = () => {
     const login = async (email, password, isUser) => {
         setIsLoading(true)
         setError(null)
-        const response = await fetch(`/api/login/${isUser?"user":"recruiter"}`, {
+        const response = await fetch(`https://cvsavvy-backend.onrender.com/login/${isUser?"user":"recruiter"}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

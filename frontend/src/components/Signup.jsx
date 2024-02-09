@@ -27,7 +27,7 @@ const SignUp = ({isUser}) => {
     else{
       user = await githubLogin()
     }
-    const response = await fetch(`/api/login/${isUser?"user":"recruiter"}/${social}`, {
+    const response = await fetch(`https://cvsavvy-backend.onrender.com/login/${isUser?"user":"recruiter"}/${social}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({user})
