@@ -158,7 +158,7 @@ python server.py
 
 ## 👨‍🏫Mentors🗿
 
-Add names of your mentors with their emails and links to their GitHub accounts
+
 
 - [Kunal Goudani](https://github.com/stealth-bombeer): goudanikunal3@gmail.com
 - [Soham Mulye](https://github.com/Shazam213): mulyesoham@gmail.com
